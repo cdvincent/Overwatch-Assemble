@@ -17,18 +17,21 @@ class App extends Component {
         randomizeChoices = id => {
                 let chosen = this.state.chosen;
 
-                if (choices.includes(id)) {
-                        this.setState({ choices: [], score: 0, message: "Game over!" });
+                if (chosen.includes(id)) {
+                        this.setState({ chosen: [], score: 0, message: "Game over!" });
                         return;
                 } else {
                         chosen.push(id);
                         console.log(chosen);
                         if (choices.length === 12) {
-                                this.setState({message: "You Win!", chosen: []});
+                                this.setState({score: 0, message: "You Win!", chosen: []});
+                        }
+                        if (this.state.score >= this.state.highScore) {
+                                this.setState({ highScore: chosen.length });
                         }
                 
-
                 this.setState({ choices, chosen, score: chosen.length, message: "Select an image!" });
+
 
                 for (let i = choices.length - 1; i > 0; i--) {
                         let j = Math.floor(Math.random() * (i + 1));

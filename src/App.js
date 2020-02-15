@@ -3,6 +3,7 @@ import Card from "./components/Card";
 import Wrapper from "./components/Wrapper";
 import Nav from "./components/Nav";
 import choices from "./Choices.js";
+import Jumbotron from './components/Jumbotron';
 
 class App extends Component {
 
@@ -11,34 +12,35 @@ class App extends Component {
                 chosen: [],
                 score: 0,
                 highScore: 0,
-                message: "Select an image!"
+                message: "Select an image to start!"
         };
         
         randomizeChoices = id => {
                 let chosen = this.state.chosen;
 
                 if (chosen.includes(id)) {
-                        this.setState({ chosen: [], score: 0, message: "Game over!" });
+                        this.setState({ chosen: [], score: 0, message: "You already chose that one. Game over!" });
                         return;
                 } else {
                         chosen.push(id);
-                        console.log(chosen);
-                        if (choices.length === 12) {
-                                this.setState({score: 0, message: "You Win!", chosen: []});
+                        
+                        if (this.state.score === 11) {
+                                this.setState({score: 0, highScore: 12, message: "You Win!", chosen: []});
+                                return;
                         }
                         if (this.state.score >= this.state.highScore) {
                                 this.setState({ highScore: chosen.length });
                         }
                 
-                this.setState({ choices, chosen, score: chosen.length, message: "Select an image!" });
+                        this.setState({ choices, chosen, score: chosen.length, message: "Select an image!" });
 
 
-                for (let i = choices.length - 1; i > 0; i--) {
-                        let j = Math.floor(Math.random() * (i + 1));
-                        [choices[i], choices[j]] = [choices[j], choices[i]];
+                        for (let i = choices.length - 1; i > 0; i--) {
+                                let j = Math.floor(Math.random() * (i + 1));
+                                [choices[i], choices[j]] = [choices[j], choices[i]];
+                        };
                 }
-        }
-}
+        };
         
 
         render() {                
@@ -49,6 +51,7 @@ class App extends Component {
                         highScore={this.state.highScore}
                         message={this.state.message}
                 />
+                <Jumbotron />
                 <Wrapper>
                         {this.state.choices.map(choice => (
                         <Card 

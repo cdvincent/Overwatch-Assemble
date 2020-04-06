@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Overwatch-Assemble/static/css/main.c42c0fcd.chunk.css",
+    "main.js": "/Overwatch-Assemble/static/js/main.ca3e9386.chunk.js",
+    "main.js.map": "/Overwatch-Assemble/static/js/main.ca3e9386.chunk.js.map",
+    "runtime-main.js": "/Overwatch-Assemble/static/js/runtime-main.33c9bf9a.js",
+    "runtime-main.js.map": "/Overwatch-Assemble/static/js/runtime-main.33c9bf9a.js.map",
+    "static/js/2.678eb951.chunk.js": "/Overwatch-Assemble/static/js/2.678eb951.chunk.js",
+    "static/js/2.678eb951.chunk.js.map": "/Overwatch-Assemble/static/js/2.678eb951.chunk.js.map",
+    "index.html": "/Overwatch-Assemble/index.html",
+    "precache-manifest.1702f102b4c82886cb681cac1054c652.js": "/Overwatch-Assemble/precache-manifest.1702f102b4c82886cb681cac1054c652.js",
+    "service-worker.js": "/Overwatch-Assemble/service-worker.js",
+    "static/css/main.c42c0fcd.chunk.css.map": "/Overwatch-Assemble/static/css/main.c42c0fcd.chunk.css.map",
+    "static/js/2.678eb951.chunk.js.LICENSE.txt": "/Overwatch-Assemble/static/js/2.678eb951.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.33c9bf9a.js",
+    "static/js/2.678eb951.chunk.js",
+    "static/css/main.c42c0fcd.chunk.css",
+    "static/js/main.ca3e9386.chunk.js"
+  ]
+}
